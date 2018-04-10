@@ -166,6 +166,9 @@ API_AVAILABLE(ios(7.0))
 @property(assign, nonatomic) AXWebViewControllerNavigationType navigationType;
 /// Navigation close bar button item.
 @property(readwrite, nonatomic) UIBarButtonItem *navigationCloseItem;
+/// 是否撑满全屏
+@property(assign, nonatomic) BOOL isFullScreen;
+
 /// Get a instance of `AXWebViewController` by a url string.
 ///
 /// @param urlString a string of url to be loaded.
