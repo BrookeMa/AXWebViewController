@@ -169,6 +169,13 @@ API_AVAILABLE(ios(7.0))
 /// 是否撑满全屏
 @property(assign, nonatomic) BOOL isFullScreen;
 
+
+/// 返回按钮点击事件
+- (void)backButtonClick;
+/// 关闭按钮点击事件
+- (void)closeButtonClick;
+
+
 /// Get a instance of `AXWebViewController` by a url string.
 ///
 /// @param urlString a string of url to be loaded.

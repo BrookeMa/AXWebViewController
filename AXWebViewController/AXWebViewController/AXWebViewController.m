@@ -474,6 +474,11 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
     // Should not pop. It appears clicked the back bar button item. We should decide the action according to the content of web view.
     if ([self.navigationController.topViewController isKindOfClass:[AXWebViewController class]]) {
+        
+        /// 暴露出来的方法
+        [self backButtonClick];
+        
+        
         AXWebViewController* webVC = (AXWebViewController*)self.navigationController.topViewController;
         // If web view can go back.
         if (webVC.webView.canGoBack) {
@@ -497,6 +502,17 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         // Pop view controllers directly.
         return YES;
     }
+}
+
+- (void)backButtonClick {
+    
+    
+    
+}
+
+- (void)closeButtonClick {
+    
+    
 }
 
 - (void)dealloc {
@@ -1177,6 +1193,9 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 }
 
 - (void)navigationIemHandleClose:(UIBarButtonItem *)sender {
+    
+    [self closeButtonClick];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
