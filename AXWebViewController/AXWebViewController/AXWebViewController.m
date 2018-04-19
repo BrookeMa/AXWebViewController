@@ -262,6 +262,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     _checkUrlCanOpen = YES;
     _maxAllowedTitleLength = 10;
     
+
     if (@available(iOS 8.0, *)) {
         // Change auto just scroll view insets to NO to fix issue: https://github.com/devedbox/AXWebViewController/issues/10
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -504,6 +505,11 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     }
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    
+    return YES;
+}
+
 - (void)backButtonClick {
     
     
@@ -627,7 +633,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         
     }
     _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
-    _webView.allowsBackForwardNavigationGestures = YES;
+    //// 取消返回手势，改成自定义
+//    _webView.allowsBackForwardNavigationGestures = YES;
     _webView.backgroundColor = [UIColor clearColor];
     _webView.scrollView.backgroundColor = [UIColor clearColor];
     // Set auto layout enabled.
@@ -653,6 +660,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     // Set the web view controller to progress view.
     __weak typeof(self) wself = self;
     _progressView.ax_webViewController = wself;
+    
     return _progressView;
 }
 
