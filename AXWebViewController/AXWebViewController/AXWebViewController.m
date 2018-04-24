@@ -988,7 +988,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     }
 }
 - (void)didStartLoad{
-    _backgroundLabel.text = AXWebViewControllerLocalizedString(@"loading", @"Loading");
+//    _backgroundLabel.text = AXWebViewControllerLocalizedString(@"loading", @"Loading");
     self.navigationItem.title = AXWebViewControllerLocalizedString(@"loading", @"Loading");
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     if (_navigationType == AXWebViewControllerNavigationBarItem) {
@@ -1060,7 +1060,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 #else
     host = _webView.request.URL.host;
 #endif
-    _backgroundLabel.text = [NSString stringWithFormat:@"%@\"%@\"%@.", AXWebViewControllerLocalizedString(@"web page",@""), host?:bundle, AXWebViewControllerLocalizedString(@"provided",@"")];
+//    _backgroundLabel.text = [NSString stringWithFormat:@"%@\"%@\"%@.", AXWebViewControllerLocalizedString(@"web page",@""), host?:bundle, AXWebViewControllerLocalizedString(@"provided",@"")];
     if (_delegate && [_delegate respondsToSelector:@selector(webViewControllerDidFinishLoad:)]) {
         [_delegate webViewControllerDidFinishLoad:self];
     }
@@ -1083,7 +1083,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
         [self loadURL:[NSURL fileURLWithPath:kAXNetworkErrorHTMLPath]];
     }
     // #endif
-    _backgroundLabel.text = [NSString stringWithFormat:@"%@%@",AXWebViewControllerLocalizedString(@"load failed:", nil) , error.localizedDescription];
+//    _backgroundLabel.text = [NSString stringWithFormat:@"%@%@",AXWebViewControllerLocalizedString(@"load failed:", nil) , error.localizedDescription];
     self.navigationItem.title = AXWebViewControllerLocalizedString(@"load failed", nil);
     if (_navigationType == AXWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
