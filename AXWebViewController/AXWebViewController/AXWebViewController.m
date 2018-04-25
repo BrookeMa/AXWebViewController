@@ -1621,9 +1621,8 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 
 #pragma mark - SKStoreProductViewControllerDelegate.
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
-    [viewController dismissViewControllerAnimated:YES completion:^{
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
+    [self.navigationController popViewControllerAnimated:NO];
+    [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Helper
