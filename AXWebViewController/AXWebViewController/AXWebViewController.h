@@ -133,7 +133,7 @@ API_AVAILABLE(ios(7.0))
 @property(assign, nonatomic) id<AXWebViewControllerDelegate>delegate;
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
 /// WebKit web view.
-@property(readonly, nonatomic) UIWebView *webView;  //// 默认使用 UIWebView
+@property(readonly, nonatomic) WKWebView *webView;
 #else
 /// Web view.
 @property(readonly, nonatomic) UIWebView *webView;
