@@ -31,7 +31,7 @@
 #endif
 
 #ifndef AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
-#define AX_WEB_VIEW_CONTROLLER_USING_WEBKIT 0/// 全部使用UIWebview
+#define AX_WEB_VIEW_CONTROLLER_USING_WEBKIT __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
 // #define AX_WEB_VIEW_CONTROLLER_USING_WEBKIT 1
 #endif
 
@@ -133,7 +133,7 @@ API_AVAILABLE(ios(7.0))
 @property(assign, nonatomic) id<AXWebViewControllerDelegate>delegate;
 #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
 /// WebKit web view.
-@property(readonly, nonatomic) WKWebView *webView;
+@property(readonly, nonatomic) UIWebView *webView;  //// 默认使用 UIWebView
 #else
 /// Web view.
 @property(readonly, nonatomic) UIWebView *webView;
