@@ -532,7 +532,7 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
     [_webView removeObserver:self forKeyPath:@"title"];
     // [_webView.scrollView removeObserver:self forKeyPath:@"backgroundColor"];
 #else
-//    _webView.delegate = nil;
+    _webView.delegate = nil;
 #endif
 #if kAX_WEB_VIEW_CONTROLLER_DEBUG_LOGGING
     NSLog(@"One of AXWebViewController's instances was destroyed.");
