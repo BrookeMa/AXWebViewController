@@ -564,17 +564,17 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        // Add progress view to navigation bar.
-        if (self.navigationController && self.progressView.superview != self.navigationController.navigationBar) {
-            [self updateFrameOfProgressView];
-            [self.navigationController.navigationBar addSubview:self.progressView];
-        }
-        float progress = [[change objectForKey:NSKeyValueChangeNewKey] floatValue];
-        if (progress >= _progressView.progress) {
-            [_progressView setProgress:progress animated:YES];
-        } else {
-            [_progressView setProgress:progress animated:NO];
-        }
+//        // Add progress view to navigation bar.
+//        if (self.navigationController && self.progressView.superview != self.navigationController.navigationBar) {
+//            [self updateFrameOfProgressView];
+//            [self.navigationController.navigationBar addSubview:self.progressView];
+//        }
+//        float progress = [[change objectForKey:NSKeyValueChangeNewKey] floatValue];
+//        if (progress >= _progressView.progress) {
+//            [_progressView setProgress:progress animated:YES];
+//        } else {
+//            [_progressView setProgress:progress animated:NO];
+//        }
     } else if ([keyPath isEqualToString:@"backgroundColor"]) {
         // #if AX_WEB_VIEW_CONTROLLER_USING_WEBKIT
         /*
