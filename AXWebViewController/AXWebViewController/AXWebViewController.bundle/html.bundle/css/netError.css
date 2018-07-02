@@ -1,0 +1,36 @@
+html,body{
+    height: 100%;
+}
+.outer{
+    height: 100%;
+    position: relative;
+}
+.wrap{
+    text-align: center;
+    padding:24px 0 0 0;
+}
+.net{
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%,-50%) ;
+}
+.neterror{
+    display: inline-block;
+    width: 254px;
+    height: 209px;
+    background:url("../img/nosingle.png") no-repeat;
+    background-size: 100% 100%;
+    /* margin: 200px 0 24px 0; */
+}
+.retry{
+    width: 200px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 18px;
+    color: #FFFFFF;
+    display: inline-block;
+    background: #00AF00;
+    border-radius: 41.67px;
+    text-align: center;
+}
